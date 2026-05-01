@@ -1,0 +1,33 @@
+# ==========================================
+# Nexus Agent System - Global Configuration
+# ==========================================
+
+system:
+  max_concurrent_agents: 5
+  sandbox_ci_timeout: 300 # seconds
+  logging_level: "DEBUG"
+
+llm_routing:
+  # Agent A requires massive context window
+  architect_model:
+    provider: "google"
+    model_name: "gemini-1.5-pro-latest"
+    api_key: "YOUR_GEMINI_API_KEY"
+    max_output_tokens: 8192
+
+  # Agent B requires strong reasoning and coding ability
+  hunter_model:
+    provider: "deepseek"
+    model_name: "deepseek-coder-33b-instruct" # Can fallback to gpt-4o
+    api_key: "YOUR_DEEPSEEK_API_KEY"
+    temperature: 0.2
+
+  # Agent C uses fast models for quick patch iterations
+  patcher_model:
+    provider: "openai"
+    model_name: "gpt-4o"
+    api_key: "YOUR_OPENAI_API_KEY"
+
+github_integration:
+  personal_access_token: "YOUR_GITHUB_PAT"
+  auto_merge_safe_patches: false
