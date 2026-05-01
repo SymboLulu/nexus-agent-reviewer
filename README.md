@@ -33,6 +33,7 @@ graph TD
     style B fill:#1e1e2f,stroke:#03a9f4,stroke-width:2px,color:#fff
     style D fill:#1e1e2f,stroke:#ff9800,stroke-width:2px,color:#fff
     style F fill:#1e1e2f,stroke:#4caf50,stroke-width:2px,color:#fff
+
 ⚡ Token Consumption Breakdown (Why we need high quota)
 This system operates on entire codebase contexts rather than diff-only approaches, ensuring zero regressions in interconnected files.
 Agent A (Architecture Context): ~500k - 1.5M input tokens per full-scan.
@@ -41,8 +42,8 @@ Agent C (Auto-Fix): Multi-turn sandboxed generation, averaging ~150k tokens per 
 Average Daily Burn: 8,000,000 - 12,000,000 Tokens.
 🚀 Quick Start (Sandbox Mode)
 For demonstration purposes, you can run the orchestrator in local sandbox mode.
-code
-Bash
+
+
 # 1. Clone the repo
 git clone https://github.com/SymbolLulu/nexus-agent-reviewer.git
 cd nexus-agent-reviewer
